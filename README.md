@@ -322,4 +322,4 @@ Para dúvidas ou sugestões, entre em contato com a equipe através do repositó
 
 ---
 
-**Desenvolvido com ❤️ pela equipe ComprasGov**
+**Desenvolvido por marcosviniciusdev.com
