@@ -1,4 +1,4 @@
-# API de Compras Públicas — Entrega 1
+# ComprasGov API
 
 API RESTful com FastAPI, SQLAlchemy e SQLite. Autenticação JWT, paginação e ordenação. Dataset base: Compras Públicas (dados.gov.br). Esta entrega foca na estrutura estável com boas práticas.
 
