@@ -1,0 +1,8 @@
+licitacao_id,fornecedor_id,descricao_item,quantidade,valor_unitario
+1,1,Seringas descartáveis 5ml,1000,0.85
+1,2,Luvas cirúrgicas,500,1.50
+2,3,Serviço de limpeza predial,12,4500
+3,4,Material didático para alunos,200,35.90
+3,5,Cadeiras ergonômicas,50,420.00
+4,1,Tablets educacionais,80,1200.00
+5,2,Serviços de manutenção de TI,6,8000.00

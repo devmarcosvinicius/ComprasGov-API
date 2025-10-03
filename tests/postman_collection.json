@@ -1,0 +1,69 @@
+{
+    "info": {
+      "name": "Entrega1 - API Compras Públicas",
+      "_postman_id": "e2c9b2c0-0000-0000-0000-aaaaaaaaaaaa",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Health",
+        "request": { "method": "GET", "url": "{{base_url}}/" }
+      },
+      {
+        "name": "Seed Admin",
+        "request": { "method": "POST", "url": "{{base_url}}/users/seed-admin" }
+      },
+      {
+        "name": "Login",
+        "request": {
+          "method": "POST",
+          "url": "{{base_url}}/users/token",
+          "body": {
+            "mode": "urlencoded",
+            "urlencoded": [
+              { "key": "username", "value": "admin@example.com" },
+              { "key": "password", "value": "admin123" }
+            ]
+          }
+        },
+        "event": [
+          {
+            "listen": "test",
+            "script": {
+              "exec": [
+                "let data = pm.response.json();",
+                "pm.collectionVariables.set('token', data.access_token);"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Listar Órgãos",
+        "request": {
+          "method": "GET",
+          "url": "{{base_url}}/orgaos?order_by=nome&direction=asc",
+          "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }]
+        }
+      },
+      {
+        "name": "Criar Órgão (Admin)",
+        "request": {
+          "method": "POST",
+          "url": "{{base_url}}/orgaos",
+          "header": [
+            { "key": "Content-Type", "value": "application/json" },
+            { "key": "Authorization", "value": "Bearer {{token}}" }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\"nome\":\"Ministério da Educação\",\"uf\":\"DF\"}"
+          }
+        }
+      }
+    ],
+    "variable": [
+      { "key": "base_url", "value": "http://localhost:8000" },
+      { "key": "token", "value": "" }
+    ]
+  }
